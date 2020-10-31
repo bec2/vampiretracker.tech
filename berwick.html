@@ -7,8 +7,40 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=IDONTTHINKSOBUDDY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location
+        const b = { lat: 55.771085, lng:-2.006552};
+        // The map
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: b,
+        });
+        // The marker
+        const marker = new google.maps.Marker({
+          position: b,
+          map: map,
+        });
+      }
+    </script>
 </head>
 <body style="background-color:black;">
+
+<div id="map"></div>
 
 <div class="text-right">
   <div class="btn-group">
